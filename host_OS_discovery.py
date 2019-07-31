@@ -10,7 +10,7 @@ import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 from scapy.all import *
 import string
-import sys
+import sys, os
 
 def OSdiscovery(target):
   try:
@@ -31,6 +31,11 @@ def OSdiscovery(target):
   except Exception, e:
       print e
 
+      
+def NetworkDiscovery(target):
+  cmd_net = 'nmap -sC -sV -p- -Pn '+ target +' -o ./network_nmap.log'
+  os.system(cmd_net)
+  
 def main():
         target = sys.argv
         if len(sys.argv) < 2:
