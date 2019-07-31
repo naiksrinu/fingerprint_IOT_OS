@@ -44,6 +44,7 @@ def main():
                 print "*" * 15
                 sys.exit(1)
         OSdiscovery(target)
+        NetworkDiscovery(target)
         print '\033[0;0m'
         print "\n"+"#" *5 + "  Th4nk Y0u  " +"#"*5
 
